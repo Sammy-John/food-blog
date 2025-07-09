@@ -58,3 +58,20 @@ if (fs.existsSync(mealsPath)) {
   fs.writeFileSync(mealsPath, JSON.stringify(meals, null, 2));
   console.log('✔ Patched image paths in data/meals.json');
 }
+
+// Patch all .css files in docs/styles
+const stylesDir = path.join(docsDir, 'styles');
+if (fs.existsSync(stylesDir)) {
+  const cssFiles = fs.readdirSync(stylesDir).filter(f => f.endsWith('.css'));
+
+  cssFiles.forEach(filename => {
+    const filePath = path.join(stylesDir, filename);
+    let css = fs.readFileSync(filePath, 'utf-8');
+
+    // Replace url("/images/...") → url("images/...")
+    css = css.replace(/url\(["']?\/(images\/[^"')]+)["']?\)/g, 'url("images/$1")');
+
+    fs.writeFileSync(filePath, css);
+    console.log(`✔ Patched ${filename}`);
+  });
+}
