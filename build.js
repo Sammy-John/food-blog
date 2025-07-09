@@ -39,8 +39,8 @@ if (fs.existsSync(scriptsDir)) {
       .replace(/(['"`])\/(data|images|styles|scripts|logo\.png)/g, '$1$2')                    // Remove leading slashes
       .replace(/url\((["']?)\/images\//g, 'url($1images/')                                    // url("/images/")
       .replace(/url\((["']?)images\//g, `url($1/${repoBase}/images/`)                         // url("images/...") → absolute GitHub path
-      .replace(/\.style\.setProperty\(['"`]--bg-img['"`],\s*.*?\);?/g, '');                   // Remove --bg-img usage
-
+      .replace(/^\s*.*?\.style\.setProperty\(['"`]--bg-img['"`],\s*.*?\);\s*\n?/gm, '');
+      
     fs.writeFileSync(filePath, js);
     console.log(`✔ Patched ${filename}`);
   });
