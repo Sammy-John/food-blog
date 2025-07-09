@@ -34,11 +34,12 @@ if (fs.existsSync(scriptsDir)) {
     const filePath = path.join(scriptsDir, filename);
     let js = fs.readFileSync(filePath, 'utf-8');
 
-    // Patch relative paths and dynamic background-image URLs
+    // Patch asset paths and dynamic background-image URLs
     js = js
-      .replace(/(['"`])\/(data|images|styles|scripts|logo\.png)/g, '$1$2')                  // Remove leading slashes
-      .replace(/url\((["']?)\/images\//g, 'url($1images/')                                  // Handle url("/images/")
-      .replace(/url\((["']?)images\//g, `url($1/${repoBase}/images/`);                      // Final GitHub-safe URL
+      .replace(/(['"`])\/(data|images|styles|scripts|logo\.png)/g, '$1$2')                    // Remove leading slashes
+      .replace(/url\((["']?)\/images\//g, 'url($1images/')                                    // url("/images/")
+      .replace(/url\((["']?)images\//g, `url($1/${repoBase}/images/`)                         // url("images/...") → absolute GitHub path
+      .replace(/\.style\.setProperty\(['"`]--bg-img['"`],\s*.*?\);?/g, '');                   // Remove --bg-img usage
 
     fs.writeFileSync(filePath, js);
     console.log(`✔ Patched ${filename}`);

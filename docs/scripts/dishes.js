@@ -64,7 +64,7 @@ function renderDishGrid(dishes) {
 
       const imgContainer = card.querySelector(".latest-img-container");
 if (imgContainer) {
-  imgContainer.style.setProperty('--bg-img', `url(${dish.image})`);
+  imgContainer`);
 }
 
     dishList.appendChild(card);
@@ -121,7 +121,7 @@ function renderFeaturedDish(dishes) {
 
   const imgContainer = latestSection.querySelector(".latest-img").closest(".latest-img-container");
 if (imgContainer) {
-  imgContainer.style.setProperty('--bg-img', `url(${featured.image})`);
+  imgContainer`);
 }
 
 }
