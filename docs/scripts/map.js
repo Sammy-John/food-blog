@@ -105,7 +105,7 @@ function setupPagination() {
 }
 
 function loadSVGMap(dishes) {
-  return fetch("/images/world.svg")
+  return fetch("images/world.svg")
     .then(res => res.text())
     .then(svg => {
       const mapContainer = document.getElementById("map-svg-container");
@@ -140,7 +140,7 @@ function loadSVGMap(dishes) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('/data/meals.json')
+  fetch('data/meals.json')
     .then(res => res.json())
     .then(data => {
       countries = data;

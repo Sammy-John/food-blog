@@ -6,24 +6,39 @@ const publicDir = path.join(__dirname, 'public');
 const viewsDir = path.join(__dirname, 'views');
 const docsDir = path.join(__dirname, 'docs');
 
-// Clean or create /docs
+// Clean /docs
 fse.removeSync(docsDir);
-fse.mkdirSync(docsDir);
+fs.mkdirSync(docsDir);
 
-// 1. Copy public content (images, styles, scripts, logo.png)
+// Copy entire public directory into docs
 fse.copySync(publicDir, docsDir);
-console.log('✔ Copied public folder to docs/');
+console.log('✔ Copied public/ to docs/');
 
-// 2. Copy and patch index.html
-const inputHtmlPath = path.join(viewsDir, 'index.html');
-const outputHtmlPath = path.join(docsDir, 'index.html');
+// Copy and patch index.html from views → docs
+const indexInputPath = path.join(viewsDir, 'index.html');
+const indexOutputPath = path.join(docsDir, 'index.html');
+let html = fs.readFileSync(indexInputPath, 'utf-8');
 
-let html = fs.readFileSync(inputHtmlPath, 'utf-8');
+// Fix leading slashes in HTML (e.g., /styles → styles)
+html = html.replace(/(href|src)=["']\/(.*?)["']/g, '$1="$2"');
+fs.writeFileSync(indexOutputPath, html);
+console.log('✔ Patched index.html paths and copied to docs/');
 
-// Patch paths: remove leading slashes (e.g. /styles/base.css → styles/base.css)
-html = html.replace(/(href|src)="\/(.*?)"/g, '$1="$2"');
+// Patch all .js files in docs/scripts
+const scriptsDir = path.join(docsDir, 'scripts');
+if (fs.existsSync(scriptsDir)) {
+  const jsFiles = fs.readdirSync(scriptsDir).filter(f => f.endsWith('.js'));
 
-fs.writeFileSync(outputHtmlPath, html);
-console.log('✔ Patched and copied index.html to docs/');
+  jsFiles.forEach(filename => {
+    const filePath = path.join(scriptsDir, filename);
+    let js = fs.readFileSync(filePath, 'utf-8');
 
-console.log('✅ GitHub Pages build complete: open docs/index.html or push to GitHub');
+    // Replace "/data/xyz" → "data/xyz" etc.
+    js = js.replace(/(['"`])\/(data|images|styles|scripts|logo\.png)/g, '$1$2');
+
+    fs.writeFileSync(filePath, js);
+    console.log(`✔ Patched ${filename}`);
+  });
+}
+
+console.log('\n✅ Build complete: docs/ is ready for GitHub Pages');

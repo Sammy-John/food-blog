@@ -129,7 +129,7 @@ if (imgContainer) {
 // Only fetch if not already done in another script
 if (!window.__mealsDataLoaded) {
   document.addEventListener("DOMContentLoaded", () => {
-    fetch('/data/meals.json')
+    fetch('data/meals.json')
       .then(res => res.json())
       .then(data => {
         window.__mealsDataLoaded = true;
