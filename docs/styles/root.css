@@ -1,0 +1,42 @@
+:root {
+  /* 🌿 Base Backgrounds – calm, natural, readable */
+  --color-bg: #F3F4F4;             /* Lighthouse – primary background (light canvas) */
+  --color-bg-alt: #E5EAE6;         /* Distant Cloud – section separators, cards */
+  --color-surface: #DEDBCC;        /* Cocoon – overlays, buttons, borders */
+
+  /* 🍛 Primary Theme Colors – evoke nature, spice, flavor */
+  --color-primary: #E84A2E;        /* Tomato Curry– global navigation, CTA, hovers */
+  --color-secondary: #416858;     /* June Ivy – for tags/buttons */
+  --color-accent: #F1FF58;         /* Yellow Ace – highlight elements, playful CTA pop */
+
+  /* 🌙 Deep Tones – use for header/footer, hover states, overlays */
+  --color-deep: #032425;           /* Teal Spill – dark contrast sections */
+  --color-shadow: rgba(3, 36, 37, 0.1);  /* Subtle shadow with themed tint */
+
+  /* ✍️ Text – softer and warm alternatives to black/grey */
+  --color-text-main: #2B2B2B;      /* Charcoal Olive – body text */
+  --color-text-inverse: #FAF9F6;   /* Ivory Mist – text on dark */
+  --color-text-muted: #EDB49A; /* Sun-Baked Clay – warm, soft coral tone with contrast */
+
+
+  /* 🌶️ Flavorful Additions – for tags, highlights, badges */
+  --color-saffron: #F2A007;        /* Golden Saffron – sweet or fried food tag */
+  --color-chili: #D7263D;          /* Hot Chili – spicy badge */
+  --color-mint: #85C1B9;           /* Cool Mint – fresh or vegetarian tag */
+  --color-berry: #8A4FFF;          /* Berry Grape – dessert or sweet elements */
+  --color-logo-brown: #4B2B1A;;   /* Logo serif – Eat the World */
+  --color-logo-brown-muted: #77503B; /* Optional muted version */
+
+
+  /* 🧱 Borders, Cards, UI Elements */
+  --border-radius: 12px;
+  --box-shadow: 0 6px 16px var(--color-shadow);
+
+    /* 🖋️ Font System – structure for type across UI and content */
+  --font-ui: 'Inter', 'Helvetica Neue', sans-serif;  /* UI elements – nav, labels, buttons */
+  --font-display: 'Playfair Display', 'Georgia', 'Cambria', serif;  /* Headings – site title, dish names, sections */
+  --font-body: 'Bitter', 'Georgia', 'Times New Roman', serif;       /* Body text – notes, descriptions, blog content */
+  --font-logo: 'Cinzel', serif;
+  --font-script: 'Satisfy', cursive;
+
+}

@@ -1,0 +1,396 @@
+/* =============================
+   📢 CTA Banner
+   Purpose: Promote latest dish or journey
+============================= */
+.cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--color-primary);      /* Orange banner */
+  color: var(--color-text-inverse);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  top: 0;
+  z-index: 1000;
+}
+
+.cta-link {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  gap: 0.25rem;
+}
+
+.cta-highlight {
+  color: var(--color-text-muted);
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.cta-subtext {
+  color: var(--color-text-inverse);    
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+@media (max-width: 640px) {
+  .cta-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-close {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+  }
+}
+
+.cta-subtext:hover,
+.cta-subtext:focus {
+  color: var(--color-surface); 
+  text-decoration: underline;
+}
+
+/* =============================
+   🧭 Header + Navigation
+============================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg);
+  z-index: 900;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-ui);
+  padding: 0.75rem 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 0; /* 🔁 NO space between the two blocks */
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text-main);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+.site-title {
+  font-family: var(--font-logo) ;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.6rem;
+  gap: 0.5rem;
+  color: var(--color-logo-brown);
+}
+
+.az-color {
+  color: var(--color-primary);
+  font-family: var(--font-script);
+}
+
+
+.site-logo {
+  height: 60px;
+  width: auto;
+}
+
+@media (max-width: 640px) {
+  .nav-wrapper {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* =============================
+   🥘 Latest Dish Highlight Card
+============================= */
+.section-latest {
+  width: 100vw;           /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Cancel out page wrapper */
+  background-color: var(--color-bg); /* Optional */
+}
+
+.latest-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+/* ✅ Flush image to edges */
+.latest-img-container {
+  position: relative;
+  width: 100%;
+  height: 380px; /* or 280px, depending on your preferred banner height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f4f1; /* fallback */
+}
+
+.latest-img-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px) brightness(1.1) grayscale(25%);
+  transform: scale(1.1); /* prevents edge clipping on blur */
+  z-index: 0;
+}
+
+.latest-img {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: auto;
+  max-height: 100%;
+  object-fit: contain;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Text container */
+.latest-info {
+  padding: 1.5rem 1.25rem;
+}
+
+.latest-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-left: 25px;
+}
+
+.latest-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0.25rem 0 1rem;
+  color: var(--color-logo-brown);
+}
+
+.latest-rating {
+  display: flex;
+  gap: 0.2rem;
+  font-size: 1.2rem;
+}
+
+.star {
+  color: #ccc; /* Empty stars */
+}
+
+.star.filled {
+  color: var(--color-saffron); 
+}
+
+.latest-meta {
+  display: flex;
+  gap: 1.5rem;
+  letter-spacing: .15em;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-surface);
+  padding-left: 25px;
+}
+
+
+.latest-recipe-label {
+  font-weight: 700;
+  color: var(--color-primary); /* Strong highlight */
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.latest-recipe-url {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  word-break: break-word;
+  transition: color 0.2s ease;
+}
+
+.latest-recipe-url:hover {
+  color: var(--color-secondary);
+}
+
+.latest-link-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+}
+
+.latest-recipe-url {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  word-break: break-word;
+  transition: color 0.2s ease;
+}
+
+/* First link keeps the original muted color */
+.latest-recipe-url:first-of-type {
+  color: var(--color-text-muted);
+}
+
+/* Subsequent links get a slightly different color for distinction */
+.latest-recipe-url:not(:first-of-type) {
+  color: var(--color-chili); /* You can define this in root */
+}
+
+/* Hover behavior consistent for all */
+.latest-recipe-url:hover {
+  color: var(--color-secondary);
+}
+
+
+.latest-source {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.latest-content-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  position: relative;
+  padding-left: 25px;
+}
+
+.latest-review {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-main);
+  line-height: 1.7;
+}
+
+.latest-about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;         /* ✅ Ensure full responsive width */
+  height: 100%;        /* Already set */
+  padding: 2rem 1.5rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  z-index: 1;
+  overflow: hidden;    /* ✅ Clip pseudo background to container */
+}
+
+/* Subtle BG image for visual depth */
+.latest-about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;        /* ✅ Force full width */
+  height: 100%;       /* ✅ Force full height */
+  background-image: url('/images/image2.jpg'); /* Replace with your asset */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.latest-about h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-logo-brown);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.latest-about p {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-deep);
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .latest-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-about {
+    top: auto;
+    transform: none;
+    margin-top: 2rem;
+  }
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--color-bg-alt);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 4rem;
+  border-top: 1px solid var(--color-surface);
+}
+
+.site-footer a {
+  color: var(--color-logo-brown-muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}

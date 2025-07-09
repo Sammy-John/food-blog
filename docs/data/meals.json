@@ -1,0 +1,48 @@
+[
+  {
+    "code": "AL",
+    "country": "Albania",
+    "dish": "Tave me Presh ska Mish + Qofte Mbushur ",
+    "image": "/images/Albania.png",
+    "cooked": "2025-06-28",
+    "rating": 3,
+    "recipe": [
+  {
+    "label": "www.myalbanianfood.com (Meatless Leek Bake)",
+    "url": "https://www.myalbanianfood.com/recipe/albanian-tave-presh-meatless-leek-bake/"
+  },
+  {
+    "label": "www.myalbanianfood.com (Stuffed Meatballs)",
+    "url": "https://www.myalbanianfood.com/recipe/stuffed-meatballs/"
+  }
+],
+    "review": [
+     "Our first stop on the adventure, Albania. Was a combination of two dishes. The first was Tave me Presh ska Mish (Meatless Leek Bake) and the second was Qofte Mbushur (Stuffed Meatballs). I chose to add the meatballs as i did not think my wife would be impressed first meal being meatless, how wrong I was.",
+     "Her thoughts surprising to me was the Rice was quite crunchy which felt wrong but worked well and the Leeks were yummy but thought it could use more. The Meatballs were nice but nothing too special and could'nt tell there was mozarella in them, with the sauce nice, but plain.",
+     "I can't tend to disagree with her view, I feel much the same way but some factors need to be considered. Leek Bake I used one medium leek when recipe calls 250g so I would increase leeks next time. Meatballs I screwed up. I forgot the cooking time, prior to starting so rather than slow-cooked it was rushed which affected the dish. Quick cooking the meatballs in air fryer for 5 minutes before in sauce for only an hour on the hob didn't allow chance for the flavours to develop. Also instead Pasta Sauce I used tinned tomatoes and some herbs.",
+     "Overall, I think the score of 3 is a bit harsh and more the execution than the recipe. The Leek bake was delicious, whilst I would be very keen to try the meatballs again giving them the time they need.",
+     "Final note. The image is not a good picture or reflection as I wasn't thinking at the time this would be published forever, so trust the website pictures more."
+  ]
+  },
+  {
+    "code": "BT",
+    "country": "Bhutan",
+    "dish": "Ema Datshi",
+    "image": "/images/Bhutan.jpeg",
+    "cooked": "2025-07-06",
+    "rating": 4,
+    "recipe": [
+  {
+    "label": "marcsrecipes.com",
+    "url": "https://marcsrecipes.com/ema-datshi/"
+  }
+]
+,
+    "review": [
+    "The first curve ball was Bhutan being chosen(Thanks ChatGPT), was I going to be able to find anything to make with the ingredients being available. Then finding an interesting dish, the expectations were it could be excellent or a contingency plan for dinner was needed.(The fish and chips round the corner was calling)",
+    "Whilst I was curious, my wife was not impressed and sceptical of ability to pull it off. To her surpise she was impressed with the presentation and how good it tasted. It was weird getting hits of melted cheese in what felt like a cross between curry and soup. It could have been spicier but was full of flavour and a pleasant surpise.",
+    "I was a big fan of this dish, I thought the sweet and spicy blend was great, I too was pleasantly surprised. Surprisingly the issue I had from making it 5 stars was the heat. Part of the trepidition was it was going to be way too hot for me, but I felt it could have added a bit more heat to make it truly outstanding.",
+    "Couple of changes I made which may have impacted the heat. We forgot tomatoes in shopping so we went with tinned tomatoes again (so left out the water) and as most of our chillis from the garden are in the freezer, the last few off the plants weren't quite enough so added some jalapenos and roasted red capsicum. Issues with ingredients was only the sichuan pepper, substituted for a chilli oil. Next time I would addd more of this and less oil. The other missing ingredient was red rice, so substituted with a microwave packet Brown,Red,Wild rice mix."
+  ]
+  }
+]

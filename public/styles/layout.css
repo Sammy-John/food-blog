@@ -1,0 +1,95 @@
+/* =============================
+   📐 Layout Containers
+============================= */
+
+/* Constrains content width and centers */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Sections with vertical spacing */
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.section-sm {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-text-main);
+}
+
+/* =============================
+   🧱 Flex / Grid Layout Helpers
+============================= */
+
+/* Vertical stack with spacing */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Basic two-column grid (auto adjusts) */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Horizontally spaced row with wrap */
+.row-between {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Centered block */
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =============================
+   📱 Responsive Breakpoints
+============================= */
+
+@media (max-width: 1024px) {
+  .wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}

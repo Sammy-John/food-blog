@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eat the World A–Z</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Satisfy&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+    <link rel="stylesheet" href="styles/root.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/map.css"/>
+    <link rel="stylesheet" href="styles/dishes.css"/>
+
+</head>
+<body>
+
+  <!-- 🔝 CTA Banner -->
+    <div class="cta-banner">
+        <div class="cta-link">
+            <span class="cta-highlight">💛 Follow the Flavor Trail</span>
+            <a href="#map" class="cta-subtext">See the World</a>
+        </div>
+    </div>
+
+  <!-- 🧭 Site Header -->
+  <header class="site-header">
+  <div class="nav-wrapper">
+    <a href="#latest" class="site-title">
+      <img src="logo.png" alt="Logo" class="site-logo" />
+      <span>Eat the World <strong class="az-color">A–Z</strong></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#latest">Home</a></li>
+      <li><a href="#map">Map</a></li>
+      <li><a href="#detail">Menu</a></li>
+    </ul>
+  </div>
+</header>
+
+
+  <main>
+
+    <!-- 🥘 Latest Dish Highlight -->
+    <section id="latest" class="section-latest">
+        <article class="latest-card">
+          <div class="latest-img-container">
+          <img src="" alt="" class="latest-img" />
+          </div>
+
+    <div class="latest-heading">
+      <h2 class="latest-title"></h2>
+      <div class="latest-rating" aria-label="rating"></div>
+    </div>
+
+    <div class="latest-meta">
+      <p class="latest-date"></p>
+      <div class="latest-link-group">
+        <span class="latest-recipe-label">Recipe From →</span>
+        <a
+          href="#"
+          class="latest-recipe-url"
+          target="_blank"
+          rel="noopener noreferrer"
+        ></a>
+      </div>
+    </div>
+
+    <div class="latest-content-wrapper">
+      <div class="latest-review"></div>
+
+      <!-- Hardcoded aside -->
+      <aside class="latest-about">
+        <h3>About Eat the World A–Z</h3>
+        <p>
+          A global food journey, one country at a time. After recently having our first child, and chances to eat out limited, we are re-visiting an idea we had a lot of fun with a few years ago. I'm cooking food from every random nations in alphabetical order (A-Z) and sharing recipes, impressions, and notes along the way.
+        </p>
+      </aside>
+    </div>
+
+
+  </article>
+</section>
+
+
+    <section id="map" class="section-map section">
+        <div class="wrapper">
+            <h2 class="section-title">Explore the World</h2>
+            <div id="map-wrapper">
+                <div id="map-svg-container">
+                    <img src="images/world.svg" alt="World Map" class="world-map" />
+                </div>
+                <div id="country-list">
+                    <div id="country-columns">
+                    <!-- Populated by JS -->
+                    </div>
+                    <div class="pagination-controls">
+                        <button id="prev-page" class="pagination-button">← Previous</button>
+                        <span id="page-indicator" class="page-number"></span>
+                        <button id="next-page" class="pagination-button">Next →</button>
+                    </div>
+                </div>
+            </div>
+            <div id="map-tooltip" class="map-tooltip hidden">
+                <img id="tooltip-img" src="" alt="Dish Preview" />
+                <strong id="tooltip-title"></strong>
+                <a id="tooltip-view-link" href="#" class="tooltip-view-link">View Dish →</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 🍲 Dish Detail Section -->
+    <section id="detail" class="section section-dishes">
+      <div class="wrapper">
+        <h2 class="section-title">More Dishes from the Trail</h2>
+        <div id="dish-list" class="dish-grid">
+          <!-- Cards populated by JS -->
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ❤️ Footer -->
+  <footer class="site-footer">
+  <p>
+    Made by
+    <a href="https://sammyjohnrawlinson.teknabu.com/" target="_blank" rel="noopener noreferrer">
+      Sammy John Rawlinson
+    </a>
+  </p>
+</footer>
+
+  <!-- Scripts -->
+   <script src="scripts/sticky.js" defer></script>
+  <script src="scripts/map.js" defer></script>
+  <script src="scripts/dishes.js" defer></script>
+</body>
+</html>

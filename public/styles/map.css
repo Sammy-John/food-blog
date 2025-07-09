@@ -1,0 +1,174 @@
+/* =============================
+   🗺️ Map Wrapper Layout
+============================= */
+
+#map-wrapper {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+#map-svg-container svg,
+#map-svg-container img {
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  display: block;
+}
+
+
+/* =============================
+   🌍 Country List + Columns
+============================= */
+
+#country-list {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+  min-height: 250px;
+}
+
+#country-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+#country-columns.small-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.country-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.country-item {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background-color: var(--color-surface);
+  cursor: pointer;
+  transition: background 0.2s;
+  flex: 0 0 auto;
+  min-width: 140px;
+}
+
+.country-item:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+
+/* =============================
+   📄 Pagination Controls
+============================= */
+
+.pagination-controls {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.pagination-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination-button:hover {
+  background-color: var(--color-secondary);
+}
+
+.page-number {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+}
+
+
+/* =============================
+   🗺️ SVG Country States
+============================= */
+
+.country {
+  stroke: #22313C;     /* or white/light grey */
+  stroke-width: 1;
+}
+
+.country.completed {
+  fill: var(--color-primary);
+  transition: fill 0.3s;
+  cursor: pointer;
+}
+
+.country.completed:hover {
+  fill: var(--color-secondary);
+}
+
+.country.completed.highlight {
+  fill: var(--color-secondary);
+}
+
+
+
+/* =============================
+   💬 Tooltip Styling
+============================= */
+
+.map-tooltip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #222;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  pointer-events: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  transform: translate(-50%, -120%);
+  max-width: 200px;
+  text-align: center;
+}
+
+.map-tooltip img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.map-tooltip.hidden {
+  display: none;
+}
+
+.tooltip-view-link {
+  color: var(--color-saffron);
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.tooltip-view-link:hover {
+  color: var(--color-primary);
+}
