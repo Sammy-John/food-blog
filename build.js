@@ -38,6 +38,11 @@ if (fs.existsSync(scriptsDir)) {
       .replace(/(['"`])\/(data|images|styles|scripts|logo\.png)/g, '$1$2')
       .replace(/url\((["']?)\/images\//g, 'url($1images/'); // fixes dynamic setProperty --bg-img
 
+    // Add GitHub Pages repo base to background-image urls in JS
+    const repoBase = 'food-blog'; // set to match your GitHub Pages repo
+    js = js.replace(/url\((["']?)images\//g, `url($1/${repoBase}/images/`);
+
+
     fs.writeFileSync(filePath, js);
     console.log(`✔ Patched ${filename}`);
   });
@@ -75,4 +80,3 @@ if (fs.existsSync(stylesDir)) {
   });
 }
 
-console.log('\n✅ Build complete: docs/ is ready for GitHub Pages');
