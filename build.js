@@ -19,9 +19,8 @@ const indexInputPath = path.join(viewsDir, 'index.html');
 const indexOutputPath = path.join(docsDir, 'index.html');
 let html = fs.readFileSync(indexInputPath, 'utf-8');
 
-// Fix leading slashes in HTML (e.g., /styles → styles)
 html = html.replace(/(href|src)=["']\/(.*?)["']/g, '$1="$2"');
-fs.writeFileSync(indexOutputPath, html);
+fs.writeFileSync(indexOutputPath, html);  // ✅ correct var
 console.log('✔ Patched index.html paths and copied to docs/');
 
 // Patch all .js files in docs/scripts
@@ -33,7 +32,7 @@ if (fs.existsSync(scriptsDir)) {
     const filePath = path.join(scriptsDir, filename);
     let js = fs.readFileSync(filePath, 'utf-8');
 
-    // Replace "/data/xyz" → "data/xyz" etc.
+    // Replace "/data/xyz", "/images/xyz", etc. → "data/xyz", "images/xyz"
     js = js.replace(/(['"`])\/(data|images|styles|scripts|logo\.png)/g, '$1$2');
 
     fs.writeFileSync(filePath, js);
@@ -41,17 +40,14 @@ if (fs.existsSync(scriptsDir)) {
   });
 }
 
-console.log('\n✅ Build complete: docs/ is ready for GitHub Pages');
-
-// Patch image paths in meals.json (if using absolute /images/... paths)
+// Patch image paths in meals.json (remove leading slashes)
 const mealsPath = path.join(docsDir, 'data', 'meals.json');
-
 if (fs.existsSync(mealsPath)) {
   let meals = JSON.parse(fs.readFileSync(mealsPath, 'utf-8'));
 
   meals.forEach(entry => {
     if (entry.image && entry.image.startsWith('/')) {
-      entry.image = entry.image.replace(/^\//, ''); // Remove leading slash
+      entry.image = entry.image.replace(/^\//, '');
     }
   });
 
@@ -68,10 +64,12 @@ if (fs.existsSync(stylesDir)) {
     const filePath = path.join(stylesDir, filename);
     let css = fs.readFileSync(filePath, 'utf-8');
 
-    // Replace url("/images/...") → url("images/...")
-    css = css.replace(/url\(["']?\/(images\/[^"')]+)["']?\)/g, 'url("images/$1")');
+    // Fix background-image: url('/images/xyz') → url('images/xyz')
+    css = css.replace(/url\(["']?\/(images\/[^"')]+)["']?\)/g, 'url("$1")');
 
     fs.writeFileSync(filePath, css);
     console.log(`✔ Patched ${filename}`);
   });
 }
+
+console.log('\n✅ Build complete: docs/ is ready for GitHub Pages');
