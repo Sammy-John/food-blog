@@ -42,3 +42,19 @@ if (fs.existsSync(scriptsDir)) {
 }
 
 console.log('\n✅ Build complete: docs/ is ready for GitHub Pages');
+
+// Patch image paths in meals.json (if using absolute /images/... paths)
+const mealsPath = path.join(docsDir, 'data', 'meals.json');
+
+if (fs.existsSync(mealsPath)) {
+  let meals = JSON.parse(fs.readFileSync(mealsPath, 'utf-8'));
+
+  meals.forEach(entry => {
+    if (entry.image && entry.image.startsWith('/')) {
+      entry.image = entry.image.replace(/^\//, ''); // Remove leading slash
+    }
+  });
+
+  fs.writeFileSync(mealsPath, JSON.stringify(meals, null, 2));
+  console.log('✔ Patched image paths in data/meals.json');
+}
