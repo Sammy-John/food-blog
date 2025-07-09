@@ -334,7 +334,7 @@
   left: 0;
   width: 100%;        /* ✅ Force full width */
   height: 100%;       /* ✅ Force full height */
-  background-image: url("images/image2.jpg"); /* Replace with your asset */
+  background-image: url("/food-blog/images/image2.jpg"); /* Replace with your asset */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

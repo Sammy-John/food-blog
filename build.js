@@ -5,6 +5,7 @@ const fse = require('fs-extra');
 const publicDir = path.join(__dirname, 'public');
 const viewsDir = path.join(__dirname, 'views');
 const docsDir = path.join(__dirname, 'docs');
+const repoBase = 'food-blog'; // Your GitHub Pages repo name
 
 // 🧹 Clean and recreate /docs
 fse.removeSync(docsDir);
@@ -33,15 +34,11 @@ if (fs.existsSync(scriptsDir)) {
     const filePath = path.join(scriptsDir, filename);
     let js = fs.readFileSync(filePath, 'utf-8');
 
-    // Patch absolute paths → relative paths in fetch, img.src, etc.
+    // Patch relative paths and dynamic background-image URLs
     js = js
-      .replace(/(['"`])\/(data|images|styles|scripts|logo\.png)/g, '$1$2')
-      .replace(/url\((["']?)\/images\//g, 'url($1images/'); // fixes dynamic setProperty --bg-img
-
-    // Add GitHub Pages repo base to background-image urls in JS
-    const repoBase = 'food-blog'; // set to match your GitHub Pages repo
-    js = js.replace(/url\((["']?)images\//g, `url($1/${repoBase}/images/`);
-
+      .replace(/(['"`])\/(data|images|styles|scripts|logo\.png)/g, '$1$2')                  // Remove leading slashes
+      .replace(/url\((["']?)\/images\//g, 'url($1images/')                                  // Handle url("/images/")
+      .replace(/url\((["']?)images\//g, `url($1/${repoBase}/images/`);                      // Final GitHub-safe URL
 
     fs.writeFileSync(filePath, js);
     console.log(`✔ Patched ${filename}`);
@@ -72,11 +69,14 @@ if (fs.existsSync(stylesDir)) {
     const filePath = path.join(stylesDir, filename);
     let css = fs.readFileSync(filePath, 'utf-8');
 
-    // Patch url('/images/...') → url('images/...')
-    css = css.replace(/url\(["']?\/(images\/[^"')]+)["']?\)/g, 'url("$1")');
+    // Patch url('/images/...') and url('images/...') → url('/food-blog/images/...')
+    css = css
+      .replace(/url\(["']?\/(images\/[^"')]+)["']?\)/g, `url("/${repoBase}/$1")`)
+      .replace(/url\(["']?(images\/[^"')]+)["']?\)/g, `url("/${repoBase}/$1")`);
 
     fs.writeFileSync(filePath, css);
     console.log(`✔ Patched ${filename}`);
   });
 }
 
+console.log('\n✅ Build complete: docs/ is ready for GitHub Pages');
