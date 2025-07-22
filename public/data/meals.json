@@ -29,7 +29,7 @@
     "country": "Bhutan",
     "dish": "Ema Datshi",
     "image": "/images/Bhutan.jpeg",
-    "cooked": "2025-07-06",
+    "cooked": "2025-07-05",
     "rating": 4,
     "recipe": [
   {
@@ -43,6 +43,48 @@
     "Whilst I was curious, my wife was not impressed and sceptical of ability to pull it off. To her surpise she was impressed with the presentation and how good it tasted. It was weird getting hits of melted cheese in what felt like a cross between curry and soup. It could have been spicier but was full of flavour and a pleasant surpise.",
     "I was a big fan of this dish, I thought the sweet and spicy blend was great, I too was pleasantly surprised. Surprisingly the issue I had from making it 5 stars was the heat. Part of the trepidition was it was going to be way too hot for me, but I felt it could have added a bit more heat to make it truly outstanding.",
     "Couple of changes I made which may have impacted the heat. We forgot tomatoes in shopping so we went with tinned tomatoes again (so left out the water) and as most of our chillis from the garden are in the freezer, the last few off the plants weren't quite enough so added some jalapenos and roasted red capsicum. Issues with ingredients was only the sichuan pepper, substituted for a chilli oil. Next time I would addd more of this and less oil. The other missing ingredient was red rice, so substituted with a microwave packet Brown,Red,Wild rice mix."
+  ]
+  },
+{
+    "code": "CO",
+    "country": "Colombia",
+    "dish": "Picadillo De Carne Y Chorizo",
+    "image": "/images/Colombia.jpeg",
+    "cooked": "2025-07-12",
+    "rating": 3,
+    "recipe": [
+  {
+    "label": "mycolombianrecipes.com",
+    "url": "https://www.mycolombianrecipes.com/chorizo-and-beef-picadillo-picadillo-de-carne-y-chorizo/"
+  }
+]
+,
+    "review": [
+    "When choosing a dish from Colombia, I went safe on the ingredients for this dish. I did attempt a side dish accompaniement which was a complete disaster and inedible, completly on me trying to substitute. I'll perhaps try that one again in the future.",
+    "My wifes opinion of the dish this week was nice but not as different or exciting as previous weeks. She was a fan of the raisins and olives, but potato was hard and rice unneccesary. ",
+    "My feelings were similar, I felt it lacked flavour, but both agreed leftovers when the flavour had more time to infuse was delicious.",
+    "Not a terrible dish, and really enjoyable as leftovers for lunch. My only improvement would be the potatoes, I would suggest cutting smaller or par-boiling before, they did not cook well enough in the dish."
+  ]
+  },
+  {
+    "code": "DO",
+    "country": "Dominica",
+    "dish": "Callaloo Soup",
+    "image": "/images/Dominica.jpeg",
+    "cooked": "2025-07-19",
+    "rating": 3,
+    "recipe": [
+  {
+    "label": "dominicagourmet",
+    "url": "https://dominicagourmet.com/dominican-callaloo-soup-recipe/"
+  }
+]
+,
+    "review": [
+    "Not brave enough to try cooking Crab, this week I made quite a few alterations on the recipe.",
+    "Well trepedatious at first, and presentation was dubious. The wife felt all in all this week the meal was yumm. Not a big fan of the dumplings, she thought fish instead would have been better. It was rich in flavour and the bacon salt added to the dish nicely, she would definitly try again.",
+    "I feel 3 is harsh for this dish, due to all the alterations and I defintly would try again with fish. Once again leftovers were fantastic, and whilst the dumplings were plain they soaked up the liquid and flavours brilliantly.",
+    "A suggestion as alternative for crab was smoked pork, which is why I went with smoked salty bacon, the main substitue was spinach instead of suggested greens. If making again I would use fish or get ambitious and use crab. This dish has a lot of potential and many uses to be adaptable. A big fan."
   ]
   }
 ]
