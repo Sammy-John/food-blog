@@ -83,5 +83,53 @@
       "I feel 3 is harsh for this dish, due to all the alterations and I defintly would try again with fish. Once again leftovers were fantastic, and whilst the dumplings were plain they soaked up the liquid and flavours brilliantly.",
       "A suggestion as alternative for crab was smoked pork, which is why I went with smoked salty bacon, the main substitue was spinach instead of suggested greens. If making again I would use fish or get ambitious and use crab. This dish has a lot of potential and many uses to be adaptable. A big fan."
     ]
+  },
+  {
+    "code": "EC",
+    "country": "Ecuador",
+    "dish": "Seco de Pollo",
+    "image": "images/ecuador.jpeg",
+    "cooked": "2025-08-09",
+    "rating": 3,
+    "recipe": [
+      {
+        "label": "laylita.com",
+        "url": "https://www.laylita.com/recipes/seco-de-pollo-ecuatoriano/"
+      },
+      {
+        "label": "favfamilyrecipes.com",
+        "url": "https://www.favfamilyrecipes.com/super-easy-yellow-rice/"
+      }
+    ],
+    "review": [
+      "So we had this twice this week, first was just side of avocado, but for 2nd meal after making more rice I added a more substantial salad. I used wine but my suggestion is to definitly use beer next time and more spice, this should add more flavour. I also substitute paprika for achiote or annato which is why the flavouring may not have worked.",
+      "The wifes thoughts on this dish was it was quite bland and needed more citrsu kic, whilst the rice was yummy, overall a nice and light dish.",
+      "The meal was a little bland, but day 2 with the flavours having more time it was an improvement. Rice was delicious and has become a staple side dish.",
+      "With my added salad of roast capsicum, olives, red onion, avocado, pepitas and the infusion of flavour, 2nd time round was much better, saving it from a 2."
+    ]
+  },
+  {
+    "code": "FI",
+    "country": "Finland",
+    "dish": "Lohikeitto + Karelian Pies",
+    "image": "images/finland.jpeg",
+    "cooked": "2025-08-16",
+    "rating": 3,
+    "recipe": [
+      {
+        "label": "food52.com",
+        "url": "https://food52.com/recipes/90785-finnish-salmon-soup"
+      },
+      {
+        "label": "allrecipes.com",
+        "url": "https://www.allrecipes.com/recipe/56443/karjalan-pies/"
+      }
+    ],
+    "review": [
+      "Finland was hard no reindeer or lindonberries available in New Zealand so foud a good looking Salmon Soup and something a bit more experimenetal in the rice parcels.",
+      "My wifes opinion was the soup was good, the salmon was cooked nicely but was hoping for more flavour from the soup, it was nice and creamy but a little bland. The rice things were odd, they tasted like they sounded rice in bread. No flavour, all in all a bit bland.",
+      "I thought the soup was great, but missing that bit of flavour a chowder would have, maybe needed to add some pepper. This rice parcels were average but made great dipping accompaniements if not their purpose.",
+      "Bit harsh to drop the score for the rice parcels as my bread making skills are terrible, so will stick to a 3, good solid average meal."
+    ]
   }
 ]
